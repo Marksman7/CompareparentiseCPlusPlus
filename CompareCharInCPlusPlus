@@ -1,0 +1,63 @@
+#include<vector>
+#include <iostream>
+#include <set>
+#include <string>
+
+
+int main()
+{
+    bool IsItGood = true;
+    int Cir = 0;
+    int Box = 0;
+    int Arr = 0;
+    std::string Wrote = "";
+    //std::string CirPar[2] = { "(", ")" };
+    //std::string BoxPar[2] = { "[", "]" };
+    //std::string ArrPar[2] = { "{", "}" };
+
+    std::cin >> Wrote;
+
+        for (int i = 0; i < Wrote.length(); i++)
+        {
+            if (Wrote.at(i) == '(')
+            {
+                Cir = Cir + 1;
+            }
+            else if (Wrote.at(i) == '[')
+            {
+                Box = Box + 1;
+            }
+            else if (Wrote.at(i) == '{')
+            {
+                Arr = Arr + 1;
+            }
+            else if (Wrote.at(i) == ')' && Cir > 0 && Box == 0 && Arr == 0)
+            {
+                Cir = Cir - 1;
+            }
+            else if (Wrote.at(i) == ']' && Box > 0 && Box == 0 && Arr == 0)
+            {
+                Box = Box - 1;
+            }
+            else if (Wrote.at(i) == '}' && Arr > 0 && Box == 0 && Arr == 0)
+            {
+                Arr = Arr - 1;
+            }
+            else
+            {
+                IsItGood = false;
+            }
+        }
+
+
+        if (IsItGood == true)
+        {
+            std::cout << "true" << std::endl;
+        }
+        else
+        {
+            std::cout << "false" << std::endl;
+        }
+
+    
+}
