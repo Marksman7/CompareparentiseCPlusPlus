@@ -35,11 +35,11 @@ int main()
             {
                 Cir = Cir - 1;
             }
-            else if (Wrote.at(i) == ']' && Box > 0 && Box == 0 && Arr == 0)
+            else if (Wrote.at(i) == ']' && Box > 0 && Cir == 0 && Arr == 0)
             {
                 Box = Box - 1;
             }
-            else if (Wrote.at(i) == '}' && Arr > 0 && Box == 0 && Arr == 0)
+            else if (Wrote.at(i) == '}' && Arr > 0 && Box == 0 && Cir == 0)
             {
                 Arr = Arr - 1;
             }
